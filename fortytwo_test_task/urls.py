@@ -1,13 +1,10 @@
-from django.conf.urls import patterns, include, url
-
+from django.conf.urls import url, include
 from django.contrib import admin
+
 admin.autodiscover()
 
-urlpatterns = patterns(
-    '',
-    # Examples:
-    # url(r'^$', 'fortytwo_test_task.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^admin/', include(admin.site.urls)),
-)
+urlpatterns = [
+    # http://sjoerdjob.com/post/reusing-django-include-urls-for-index/
+    url(r'^', include('apps.hello.urls', namespace='hello'), name='index'),
+    url(r'^admin/', admin.site.urls),
+]

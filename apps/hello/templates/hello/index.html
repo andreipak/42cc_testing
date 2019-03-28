@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>42 Coffee Cups Test Assignment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <style type="text/css">
+      
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+     <!-- Begin page content -->
+    <main role="main" class="container">
+      <div class="mt-1 pb-3">
+        <h1>42 Coffee Cups Test Assignment</h1>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6 left-pane">
+            <div class="field"><span>First Name:</span> Andrei<!--{{ contact.first_name }} --></div>
+            <div class="field"><span>Last name:</span> Pak<!-- {{ contact.last_name }} --></div>
+            <div class="field"><span>Date of birth:</span> 1981-03-13<!-- {{ contact.dob|date:'Y-m-d' }} --></div>
+
+            <div class="field"><span>Bio:</span> <div class="textarea"> Multiline<!-- {{ contact.bio|escape|linebreaks }} --></div></div>
+
+
+        </div>
+        <div class="col-sm-6 right-pane">
+          <div class="field bold"><span>Contacts</span> </div>
+          <div class="field"><span>Email:</span> pak.andrei@gmail.com<!-- {{ contact.email }} --></div>
+          <div class="field"><span>Jabber:</span>andreipak@42cc.co <!-- {{ contact.jabber }} --></div>
+          <div class="field"><span>Skype:</span> pak.andrei@gmail.com<!-- {{ contact.skype }} --></div>
+
+          <div id="textarea-wrapper">
+          <div class="field"><span>Other contacts:</span> <div class="textarea"> Multiline<!-- {{ contact.other_contacts|escape|linebreaks }} --></div></div>
+          
+        </div>
+      </div>
+    
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
