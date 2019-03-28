@@ -1,4 +1,7 @@
 from django.test import TestCase
+from datetime import date
+from apps.hello.models import Profile
+
 
 profile_defaults = {
     "bio": "Software Developer and\r\nResearcher in a wide variety of" +
@@ -34,19 +37,19 @@ class ProfileModelTests(TestCase):
 
     def test_fields(self):
         """
-        test if fields stores valid values
+        test if fields stores valid value
         """
         profile = create_profile()
 
         self.assertEqual(profile.first_name, 'Andrei')
         self.assertEqual(profile.last_name, 'Pak')
         self.assertEqual(profile.dob, date(1981, 3, 13))
-        self.assertEqual(profile.bio, 
+        self.assertEqual(
+            profile.bio,
             "Software Developer and\r\nResearcher in a wide variety of" +
-            "\r\napplications and tools")
+            "\r\napplications and tools"
+        )
         self.assertEqual(profile.skype, 'pak.andrei')
         self.assertEqual(profile.jabber, 'andreipak@42cc.co')
         self.assertEqual(profile.email, 'pak.andrei@gmail.com')
         self.assertEqual(profile.other_contacts, 'LinkedIn Profile')
-
-

@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from apps.hello.models import Profile
 
 
 def index(request):
-    return render(request, 'hello/index.html')
+    profile = Profile.objects.first()
+    return render(request,
+                  'hello/index.html', {
+                      'profile': profile
+                  })

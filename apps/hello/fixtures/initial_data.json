@@ -1,0 +1,16 @@
+[ 
+ {
+  "pk": 1,
+  "model": "hello.profile",
+  "fields": {
+   "bio": "Software Developer and\r\nResearcher in a wide variety of\r\napplications and tools",
+   "first_name": "Andrei",
+   "last_name": "Pak",
+   "dob": "1981-03-13",
+   "other_contacts": "LinkedIn Profile",
+   "skype": "pak.andrei",
+   "jabber": "andreipak@42cc.co",
+   "email": "pak.andrei@gmail.com"
+  }
+ }
+]
