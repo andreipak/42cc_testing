@@ -12,5 +12,23 @@
    "jabber": "andreipak@42cc.co",
    "email": "pak.andrei@gmail.com"
   }
+ },
+ {
+  "fields": {
+      "date_joined": "2018-03-01T12:00:00.000Z",
+      "email": "admin@example.com",
+      "first_name": "",
+      "groups": [],
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "last_login": "2018-03-01T12:00:00.000Z",
+      "last_name": "",
+      "password": "pbkdf2_sha256$12000$SOMuSFpnfOko$lvGaKdOru/ju4K25Sg7gXBHxlShn7ocE/E2j5/zWFxI=",
+      "user_permissions": [],
+      "username": "admin"
+  },
+  "model": "auth.user",
+  "pk": 1
  }
 ]

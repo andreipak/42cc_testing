@@ -1,6 +1,11 @@
 from django.test import TestCase
 from datetime import date
+from django.contrib.auth.models import User
+
 from apps.hello.models import Profile
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 profile_defaults = {
@@ -53,3 +58,40 @@ class ProfileModelTests(TestCase):
         self.assertEqual(profile.jabber, 'andreipak@42cc.co')
         self.assertEqual(profile.email, 'pak.andrei@gmail.com')
         self.assertEqual(profile.other_contacts, 'LinkedIn Profile')
+
+
+class InitialDataTest(TestCase):
+    '''
+    Check if data preloaded from fixtures
+    '''
+
+    def test_adminuser(self):
+        """
+        check if initial superuser exists and has default credentials
+        """
+
+        default_credentials = 'admin:admin'
+        username, password = default_credentials.split(':')
+
+        u = User.objects.get(pk=1)
+        self.assertEqual(u.is_superuser, True)
+        self.assertEqual(u.username == username, True)
+        self.assertEqual(u.check_password(password), True)
+
+    def test_person_model_default_field_values(self):
+        '''
+        check if initial profile data was loaded
+        '''
+        initial_profile = Profile.objects.get(pk=1)
+
+        for field_name in initial_profile._meta.get_all_field_names():
+            logger.debug(
+                'test_person_model_default_field_values: field: {0}'
+                .format(field_name))
+
+            # skip object-id which should differ
+            if field_name == 'id':
+                continue
+
+            self.assertEquals(getattr(initial_profile, field_name),
+                              profile_defaults[field_name])
